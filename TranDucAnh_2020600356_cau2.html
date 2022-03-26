@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            height: 100%;
+        }
+        
+        form {
+            padding-top: 55px;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        .main {
+            width: 50%;
+            height: 400px;
+            background-color: #ADD8E6;
+            display: flex;
+            justify-content: center;
+            border-radius: 12px;
+            box-shadow: gray 1px 1px 1px 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        input {
+            width: 200px;
+            height: 27px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <form>
+            <table>
+                <tr>
+                    <td>Nhập chuỗi : </td>
+                    <td><input required id='input'></td>
+                </tr>
+                <tr>
+                    <td>Nhập từ:</td>
+                    <td><input readonly id='kq'></td>
+                </tr>
+                <tr>
+                    <td>Thông báo : </td>
+                    <td><input required id='input'></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="button" onclick="xoa()">Hủy bỏ</button>
+                        <button type="button" onclick="formm()">Kiểm tra</button>
+                    </td>
+                </tr>
+            </table>
+            <div id="error">
+
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function formm() {
+            var a = document.getElementById('input').value;
+            var b = document.getElementById('kq');
+            var c = "";
+            var mArray = a.split(",");
+            var h = parseInt(mArray.sort());
+
+            for (var i = 0; i < mArray.length; i++) {
+                mArray[i] = parseInt(mArray[i]);
+            }
+            mArray.sort();
+            console.log(mArray.sort());
+
+            for (var i = 0; i < mArray.length; i++) {
+                for (var j = i; j < mArray.length; j++) {
+                    if (mArray[i] > mArray[j]) {
+                        var gt = mArray[i];
+                        mArray[i] = mArray[j]
+                        mArray[j] = gt;
+                    }
+                }
+            }
+
+            console.log(parseInt(mArray));
+            for (var i = 0; i < mArray.length; i++) {
+                if (parseInt(mArray[i]) == 0) {
+                    continue;
+                }
+                if (parseInt(mArray[i]) % 2 == 0) {
+                    c += mArray[i] + ",";
+                }
+            }
+            for (var i = 0; i < mArray.length; i++) {
+                if (parseInt(mArray[i]) % 2 != 0 || parseInt(mArray[i]) == 0) {
+                    c += mArray[i] + ",";
+                }
+            }
+            b.value = c;
+        }
+
+        function xoa() {
+            document.getElementById('input').value = "";
+            document.getElementById('kq').value = "";
+        }
+    </script>
+
+</body>
+
+</html>

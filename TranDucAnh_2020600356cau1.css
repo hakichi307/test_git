@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 1366px;
+    margin: 0 auto;
+}
+
+
+/* header */
+
+#header {
+    display: flex;
+    background-color: #0099ff;
+    height: 50px;
+    justify-content: space-around;
+}
+
+#header img {
+    width: 60px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+#header p {
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+#header input {
+    height: 30px;
+    margin-top: 10px;
+}
+
+#header p:hover {
+    color: orange;
+}
+
+
+/* menu */
+
+#menu {
+    background-color: #2f12bc;
+    height: 40px;
+}
+
+#menu .sub>li {
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 16px;
+    justify-content: space-around;
+}
+
+#menu .sub a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+#menu .sub li {
+    padding: 0px 15px;
+}
+
+#menu li:hover {
+    background-color: #1295d5;
+}
+
+#menu .sub a:hover {
+    color: #ffff33;
+}
+
+
+/* menu cap 2 */
+
+.sub {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subnav {
+    position: absolute;
+    top: 40px;
+    left: 370px;
+    display: none;
+    min-width: 220px;
+    background-color: #fff;
+}
+
+.subnav ul li {
+    list-style-type: none;
+}
+
+.subnav ul li a {
+    color: black;
+}
+
+.sub li:hover .subnav {
+    display: inline-block;
+}
+
+
+/* content */
+
+#content p {
+    color: #fff;
+    background-color: #0099ff;
+    height: 30px;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#content .ma {
+    display: flex;
+    padding: 5px 115px;
+}
+
+#content .ma h2 {
+    padding: 0px 115px;
+    font-size: 20px;
+}
+
+#content .pro {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+#content .pro span {
+    font-size: 20px;
+}
+
+#content .pro span:hover {
+    color: #009933;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 1%;
+}
+
+.row img {
+    width: 200px;
+    height: 300px;
+}
